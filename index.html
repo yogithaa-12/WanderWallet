@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WanderWallet - Travel Budget Manager</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1><i class="fas fa-wallet"></i> WanderWallet</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active"><i class="fas fa-home"></i> Dashboard</a></li>
+                    <li><a href="expenses.html"><i class="fas fa-receipt"></i> Expenses</a></li>
+                    <li><a href="budget.html"><i class="fas fa-chart-pie"></i> Budget</a></li>
+                    <li><a href="reports.html"><i class="fas fa-chart-line"></i> Reports</a></li>
+                    <li><a href="converter.html"><i class="fas fa-exchange-alt"></i> Converter</a></li>
+                </ul>
+            </nav>
+            <div class="user-profile">
+                <span id="current-date"></span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="dashboard">
+            <div class="card fade-in">
+                <div class="card-icon">
+                    <i class="fas fa-piggy-bank"></i>
+                </div>
+                <h2>Total Budget</h2>
+                <p id="total-budget">$0.00</p>
+                <div class="card-footer">
+                    <span>Set in Budget page</span>
+                </div>
+            </div>
+            
+            <div class="card fade-in delay-1">
+                <div class="card-icon">
+                    <i class="fas fa-money-bill-wave"></i>
+                </div>
+                <h2>Money Spent</h2>
+                <p id="money-spent">$0.00</p>
+                <div class="card-footer">
+                    <span>Across all categories</span>
+                </div>
+            </div>
+            
+            <div class="card fade-in delay-2">
+                <div class="card-icon">
+                    <i class="fas fa-coins"></i>
+                </div>
+                <h2>Money Remaining</h2>
+                <p id="money-remaining">$0.00</p>
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="budget-progress"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card fade-in delay-3">
+                <div class="card-icon">
+                    <i class="fas fa-globe-americas"></i>
+                </div>
+                <h2>Primary Currency</h2>
+                <p id="primary-currency">USD</p>
+                <div class="card-footer">
+                    <a href="converter.html" class="btn-small"><i class="fas fa-exchange-alt"></i> Convert</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="recent-expenses">
+            <div class="section-header">
+                <h2><i class="fas fa-history"></i> Recent Expenses</h2>
+                <a href="expenses.html" class="btn"><i class="fas fa-plus"></i> Add Expense</a>
+            </div>
+            
+            <div class="table-container">
+                <table id="recent-expenses">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Description</th>
+                            <th>Amount</th>
+                            <th>Currency</th>
+                            <th>Category</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="empty-state">
+                            <td colspan="6">
+                                <i class="fas fa-receipt"></i>
+                                <p>No expenses recorded yet</p>
+                                <a href="expenses.html" class="btn">Add Your First Expense</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="quick-actions">
+            <h2>Quick Actions</h2>
+            <div class="action-buttons">
+                <a href="expenses.html" class="action-btn">
+                    <i class="fas fa-plus-circle"></i>
+                    <span>Add Expense</span>
+                </a>
+                <a href="budget.html" class="action-btn">
+                    <i class="fas fa-edit"></i>
+                    <span>Edit Budget</span>
+                </a>
+                <a href="converter.html" class="action-btn">
+                    <i class="fas fa-calculator"></i>
+                    <span>Currency Converter</span>
+                </a>
+                <a href="reports.html" class="action-btn">
+                    <i class="fas fa-chart-bar"></i>
+                    <span>View Reports</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2023 WanderWallet - Travel Budget Manager</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <div class="dark-mode-toggle">
+        <button class="toggle-btn" id="dark-mode-toggle">
+            <i class="fas fa-moon"></i>
+        </button>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Display current date
+        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        document.getElementById('current-date').textContent = new Date().toLocaleDateString('en-US', options);
+        
+        // Initialize tooltips
+        document.querySelectorAll('[data-tooltip]').forEach(el => {
+            el.addEventListener('mouseenter', showTooltip);
+            el.addEventListener('mouseleave', hideTooltip);
+        });
+    </script>
+</body>
+</html>

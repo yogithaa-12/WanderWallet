@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget - Travel Budget Manager</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Travel Budget Manager</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Dashboard</a></li>
+                <li><a href="expenses.html">Expenses</a></li>
+                <li><a href="budget.html" class="active">Budget</a></li>
+                <li><a href="reports.html">Reports</a></li>
+                <li><a href="converter.html">Currency Converter</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="set-budget">
+            <h2>Set Your Travel Budget</h2>
+            <form id="budget-form">
+                <div class="form-group">
+                    <label for="total-budget-input">Total Budget:</label>
+                    <input type="number" id="total-budget-input" step="0.01" required>
+                </div>
+                <div class="form-group">
+                    <label for="budget-currency">Currency:</label>
+                    <select id="budget-currency" required>
+                        <option value="USD">US Dollar (USD)</option>
+                        <option value="EUR">Euro (EUR)</option>
+                        <option value="GBP">British Pound (GBP)</option>
+                        <option value="KWD">Kuwaiti Dinar (KWD)</option>
+                        <option value="SAR">Saudi Riyal (SAR)</option>
+                        <option value="CHF">Swiss Franc (CHF)</option>
+                    </select>
+                </div>
+                <button type="submit">Set Budget</button>
+            </form>
+        </section>
+
+        <section class="category-budgets">
+            <h2>Category Budgets</h2>
+            <form id="category-budget-form">
+                <div class="form-group">
+                    <label for="accommodation-budget">Accommodation:</label>
+                    <input type="number" id="accommodation-budget" step="0.01">
+                </div>
+                <div class="form-group">
+                    <label for="food-budget">Food:</label>
+                    <input type="number" id="food-budget" step="0.01">
+                </div>
+                <div class="form-group">
+                    <label for="transport-budget">Transport:</label>
+                    <input type="number" id="transport-budget" step="0.01">
+                </div>
+                <div class="form-group">
+                    <label for="activities-budget">Activities:</label>
+                    <input type="number" id="activities-budget" step="0.01">
+                </div>
+                <div class="form-group">
+                    <label for="shopping-budget">Shopping:</label>
+                    <input type="number" id="shopping-budget" step="0.01">
+                </div>
+                <div class="form-group">
+                    <label for="other-budget">Other:</label>
+                    <input type="number" id="other-budget" step="0.01">
+                </div>
+                <button type="submit">Save Category Budgets</button>
+            </form>
+        </section>
+
+        <section class="budget-progress">
+            <h2>Budget Progress</h2>
+            <div class="progress-bars">
+                <!-- Filled by JavaScript -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Travel Budget Manager</p>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

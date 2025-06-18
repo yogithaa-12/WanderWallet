@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter - Travel Budget Manager</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Travel Budget Manager</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Dashboard</a></li>
+                <li><a href="expenses.html">Expenses</a></li>
+                <li><a href="budget.html">Budget</a></li>
+                <li><a href="reports.html">Reports</a></li>
+                <li><a href="converter.html" class="active">Currency Converter</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="currency-converter">
+            <h2>Currency Converter</h2>
+            <form id="converter-form">
+                <div class="form-group">
+                    <label for="amount">Amount:</label>
+                    <input type="number" id="amount" step="0.01" required>
+                </div>
+                <div class="form-group">
+                    <label for="from-currency">From:</label>
+                    <select id="from-currency" required>
+                        <option value="USD">US Dollar (USD)</option>
+                        <option value="EUR">Euro (EUR)</option>
+                        <option value="GBP">British Pound (GBP)</option>
+                        <option value="KWD">Kuwaiti Dinar (KWD)</option>
+                        <option value="SAR">Saudi Riyal (SAR)</option>
+                        <option value="CHF">Swiss Franc (CHF)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="to-currency">To:</label>
+                    <select id="to-currency" required>
+                        <option value="USD">US Dollar (USD)</option>
+                        <option value="EUR">Euro (EUR)</option>
+                        <option value="GBP">British Pound (GBP)</option>
+                        <option value="KWD">Kuwaiti Dinar (KWD)</option>
+                        <option value="SAR">Saudi Riyal (SAR)</option>
+                        <option value="CHF">Swiss Franc (CHF)</option>
+                    </select>
+                </div>
+                <button type="submit">Convert</button>
+            </form>
+
+            <div class="conversion-result">
+                <h3>Result:</h3>
+                <p id="conversion-result">-</p>
+            </div>
+        </section>
+
+        <section class="exchange-rates">
+            <h2>Current Exchange Rates (to USD)</h2>
+            <table id="exchange-rates">
+                <thead>
+                    <tr>
+                        <th>Currency</th>
+                        <th>Rate</th>
+                        <th>Last Updated</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Filled by JavaScript -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Travel Budget Manager</p>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

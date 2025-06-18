@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports - Travel Budget Manager</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Travel Budget Manager</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Dashboard</a></li>
+                <li><a href="expenses.html">Expenses</a></li>
+                <li><a href="budget.html">Budget</a></li>
+                <li><a href="reports.html" class="active">Reports</a></li>
+                <li><a href="converter.html">Currency Converter</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="spending-by-category">
+            <h2>Spending by Category</h2>
+            <div class="chart-container">
+                <canvas id="category-chart"></canvas>
+            </div>
+        </section>
+
+        <section class="spending-over-time">
+            <h2>Spending Over Time</h2>
+            <div class="chart-container">
+                <canvas id="timeline-chart"></canvas>
+            </div>
+        </section>
+
+        <section class="currency-breakdown">
+            <h2>Currency Breakdown</h2>
+            <div class="chart-container">
+                <canvas id="currency-chart"></canvas>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Travel Budget Manager</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
